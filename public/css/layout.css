@@ -1,0 +1,54 @@
+.header
+{
+background-color:#374859;
+}
+.button1,
+
+ .button2
+{
+width:100px;
+    height: 100px;
+    background-color: red;
+}
+
+
+
+.login-btn
+{
+    display: inline-block;
+    width: 100px;
+    padding: 8px;
+    color: #A5A5A5;
+    border: 1px solid #131313;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+
+.login-btn:hover,
+.login-btn:active
+{
+    color: #131313;
+}
+
+.navigation
+{
+    background-color: red;
+}
+main .mainmenu .asdasdasd {
+    margin:450px;
+}
+img
+{
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.footer-link a{
+    color:#777777;
+}
+
+.footer {
+    border-top: 1px solid #777777;
+}

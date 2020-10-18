@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a742ec2c-eaf4-4b53-8060-f2f11987ed4f" name="Default Changelist" comment="." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/valitron" />
+      <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1ibd2KwttYcoAH9CTvhZ1XkyRVR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../miniblog.local" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\miniblog.loc\app\views\Posts" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="c" />
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a742ec2c-eaf4-4b53-8060-f2f11987ed4f" name="Default Changelist" comment="" />
+      <created>1602180017220</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602180017220</updated>
+      <workItem from="1602180018344" duration="5456000" />
+      <workItem from="1602574837533" duration="1747000" />
+      <workItem from="1602608659225" duration="2540000" />
+      <workItem from="1602614249420" duration="11428000" />
+      <workItem from="1602676552662" duration="5750000" />
+      <workItem from="1602692756400" duration="4305000" />
+      <workItem from="1602758496038" duration="11857000" />
+      <workItem from="1602787773559" duration="25489000" />
+      <workItem from="1603043154589" duration="1252000" />
+      <workItem from="1603044449611" duration="429000" />
+      <workItem from="1603044909370" duration="1479000" />
+      <workItem from="1603047058922" duration="700000" />
+      <workItem from="1603047872600" duration="1520000" />
+      <workItem from="1603049584368" duration="243000" />
+      <workItem from="1603049866875" duration="191000" />
+      <workItem from="1603050399553" duration="432000" />
+      <workItem from="1603052554597" duration="83000" />
+      <workItem from="1603052704256" duration="598000" />
+      <workItem from="1603053344609" duration="288000" />
+    </task>
+    <task id="LOCAL-00001" summary="first">
+      <created>1603045662977</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603045662977</updated>
+    </task>
+    <task id="LOCAL-00002" summary="vd">
+      <created>1603048425660</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603048425660</updated>
+    </task>
+    <task id="LOCAL-00003" summary=".">
+      <created>1603049890271</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603049890271</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first" />
+    <MESSAGE value="vd" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Deployment" timestamp="1603043407083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1603043407083" />
+    <state x="526" y="236" key="#Notifications" timestamp="1603050478217">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="526" y="236" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1603050478217" />
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1602673544952">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1602673544952" />
+    <state x="996" y="115" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602873100208">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="996" y="115" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1602873100208" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603053612706">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603053612706" />
+    <state x="726" y="147" key="NewPhpClassDialog" timestamp="1602879415958">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="726" y="147" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1602879415958" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1602879756570">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1602879756570" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1603053354070">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603053354070" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1602616364081">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1602616364081" />
+    <state x="657" y="327" key="VCS.EditChangelistDialog" timestamp="1603052868153">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="657" y="327" key="VCS.EditChangelistDialog/0.0.1536.824@0.0.1536.824" timestamp="1603052868153" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1603049994839">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603049994839" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603049362957">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603049362957" />
+    <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603049414540">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603049414540" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1603047717371">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1603047717371" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603037717156">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603037717156" />
+  </component>
+</project>
