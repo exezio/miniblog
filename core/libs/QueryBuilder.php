@@ -16,7 +16,7 @@ class QueryBuilder
     private static $andWhere;
     private static $orWhere;
     private static $sql;
-    private static $params;
+    private static $params = [];
 
 
     public function __construct($pdo)
@@ -31,6 +31,7 @@ class QueryBuilder
         {
             foreach ($args as $key => $item)
             {
+
                 if (is_array($item))
                 {
                     $params = implode(', ', $item);
@@ -53,7 +54,6 @@ class QueryBuilder
         $params = $this->funcParamsToString($args);
         $sql .= $params . ' ';
         self::$sql .= $sql;
-        debug(self::$sql);
         return $this;
     }
 
@@ -64,7 +64,6 @@ class QueryBuilder
         $params = $this->funcParamsToString($args);
         $sql .= rtrim($params, ', ') . ' ';
         self::$sql .= $sql;
-        debug(self::$sql);
         return $this;
     }
 
@@ -75,7 +74,6 @@ class QueryBuilder
         $params = $this->funcParamsToString($args);
         $sql .= $params . ' ';
         self::$sql .= $sql;
-        debug(self::$sql);
         return $this;
     }
 
@@ -90,11 +88,31 @@ class QueryBuilder
         return $this;
     }
 
+    public function count($table)
+    {
+        $sql = "SELECT COUNT(*) FROM  {$table}";
+        $data = $this->pdo->prepare($sql);
+        $data->execute();
+        $res = $data->fetchAll();
+        $count = $res[0]['COUNT(*)'];
+        return $count;
+    }
+
+    public function limit($start, $end)
+    {
+
+        $sql = 'LIMIT :start, :end ';
+        self::$sql .= $sql;
+        $params = ['start' => $start, 'end' => $end];
+        self::$params = $params;
+        return $this;
+    }
+
     public function execute() {
         $data = $this->pdo->prepare(self::$sql);
         $data->execute(self::$params);
         $res = $data->fetchAll();
-        debug($res);
+        return $res;
     }
 
 }

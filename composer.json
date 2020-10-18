@@ -12,7 +12,9 @@
             "App\\Models\\" : "app/models",
             "Libs\\" : "libs",
             "Core\\" : "core",
-            "Core\\Libs\\" : "core/libs"
+            "Core\\Libs\\" : "core/libs",
+            "App\\Controllers\\Admin\\" : "app/controllers/admin"
+
         },
         "files": [
             "libs/functions.php"
@@ -20,6 +22,9 @@
     },
     "require": {
         "filp/whoops": "^2.7",
-        "vlucas/phpdotenv": "^5.2"
+        "vlucas/phpdotenv": "^5.2",
+        "vlucas/valitron": "^1.4"
+
+
     }
 }

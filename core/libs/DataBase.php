@@ -31,7 +31,8 @@ class DataBase
         {
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,        //Выводит исключения, если они происходят
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false
             ];
             $this->pdo = new PDO($cfgDB['dsn'], $cfgDB['user'], $cfgDB['pass'], $options);
         } catch (PDOException $error)

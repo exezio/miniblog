@@ -9,4 +9,6 @@ class Main extends Model
 
     protected $table = 'phones';
 
+
+
 }

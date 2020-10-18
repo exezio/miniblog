@@ -9,15 +9,13 @@ abstract class Controller
 
     protected $route;
     protected $view;
-    protected $layout;
     protected $props = [];
+    protected $layout = LAYOUT;
 
-
-    public function __construct($route, $layout = LAYOUT)
+    public function __construct($route)
     {
         $this->route = $route;
         $this->view = $route['action'];
-        $this->layout = $layout;
     }
 
     public function getview()

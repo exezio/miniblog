@@ -4,6 +4,8 @@
 namespace Core;
 
 
+
+
 class Router
 {
 
@@ -36,7 +38,7 @@ class Router
     {
         if (self::matchRoute($url))
         {
-            $controller = 'App\Controllers\\' . self::$route['controller'] . 'Controller';
+            $controller = 'App\Controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
             $action = self::$route['action'] . 'Action';
             if (class_exists($controller))
             {
@@ -66,6 +68,8 @@ class Router
                         $route[$key] = $value;
                     }
                 }
+                if(isset($route['prefix'])) $route['prefix'] .= '\\';
+                else $route['prefix'] = '';
                 $route['action'] = self::actionForRoute($route['action']) ?: 'index';
                 $route['controller'] = self::controllerForRoute($route['controller']);
                 self::$route = $route;
