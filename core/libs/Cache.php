@@ -8,17 +8,15 @@ use Libs\SingletonTrait;
 
 class Cache
 {
-
     use SingletonTrait;
-
-    protected $redis;
+    private static $redis;
 
     public function __construct()
     {
         try
         {
-            $this->redis = new \Redis();
-            $this->redis->connect($_ENV['REDIS_HOST'], $_ENV['REDIS_PORT']);
+            self::$redis = new \Redis();
+            self::$redis->connect($_ENV['REDIS_HOST'], $_ENV['REDIS_PORT']);
 
         }
         catch (\Exception $error)
@@ -29,9 +27,9 @@ class Cache
 
     public static function set($key, $value)
     {
-        if(!$this->redis->exists($key))
+        if(!self::$redis->exists($key))
         {
-            $this->redis->set($key, $value);
+            self::$redis->set($key, $value);
         }
         else trigger_error("This key is exists", E_USER_WARNING);
 
@@ -39,10 +37,14 @@ class Cache
 
     public static function get($key)
     {
-        if(!$this->redis->exists($key)) trigger_error("This key not exists", E_USER_WARNING);
-        return $this->redis->get($key);
+        if(!self::$redis->exists($key)) trigger_error("This key not exists", E_USER_WARNING);
+        return self::$redis->get($key);
     }
 
+    public static function exists($key)
+    {
+        return self::$redis->exists($key);
+    }
 
 
 

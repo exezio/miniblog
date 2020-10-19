@@ -29,9 +29,9 @@
         </div>
     </header>
 
-    <?if(isset($_SESSION['errors'])) : ?>
+    <?if(isset($_SESSION['errorsAuth'])) : ?>
         <div class="alert alert-danger">
-            <?=$_SESSION['errors']; unset($_SESSION['errors'])?>
+            <?=$_SESSION['errorsAuth']; unset($_SESSION['errorsAuth'])?>
         </div>
     <?endif;?>
     <?if(isset($_SESSION['success'])) : ?>

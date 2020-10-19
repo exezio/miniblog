@@ -7,7 +7,7 @@ use Core\Model;
 class Main extends Model
 {
 
-    protected $table = 'phones';
+    public $table = 'posts';
 
 
 

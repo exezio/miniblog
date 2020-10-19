@@ -18,8 +18,8 @@ if(!function_exists('debug')) {
          $redirect = isset($_SERVER['HTTP_REFERER']) ?
          $_SERVER['HTTP_REFERER'] : '/';
         }
-        header("Location : $redirect");
-        die;
+        header("Location: $redirect");
+        exit;
     }
 
 

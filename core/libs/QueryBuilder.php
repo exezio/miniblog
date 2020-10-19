@@ -2,21 +2,16 @@
 
 
 namespace Core\Libs;
-
+use Core\Libs\Cache;
 
 class QueryBuilder
 {
 
     private  $pdo;
-    private static $select;
-    private static $from;
-    private static $where;
-    private static $limit;
-    private static $all;
-    private static $andWhere;
-    private static $orWhere;
     private static $sql;
     private static $params = [];
+
+
 
 
     public function __construct($pdo)
@@ -67,6 +62,21 @@ class QueryBuilder
         return $this;
     }
 
+    public function insert($table, $values)
+    {
+        $insertKeys = '';
+        $insertAggregate = '';
+        foreach ($values as $key => $value)
+        {
+            $insertKeys .= $key . (next($values) ? ', ' : '');
+            $insertAggregate .= ':' . $key . (!(array_key_last($values) === $key) ?  ', ' : '');
+        }
+        $sql = "INSERT INTO {$table}({$insertKeys}) VALUES ({$insertAggregate}) ";
+        self::$sql = $sql;
+        self::$params = $values;
+        return $this;
+    }
+
     public function from()
     {
         $args = func_get_args();
@@ -100,7 +110,6 @@ class QueryBuilder
 
     public function limit($start, $end)
     {
-
         $sql = 'LIMIT :start, :end ';
         self::$sql .= $sql;
         $params = ['start' => $start, 'end' => $end];
@@ -108,11 +117,26 @@ class QueryBuilder
         return $this;
     }
 
-    public function execute() {
+    public function query()
+    {
         $data = $this->pdo->prepare(self::$sql);
-        $data->execute(self::$params);
-        $res = $data->fetchAll();
-        return $res;
+        return $data->execute(self::$params);
+    }
+
+    public function execute()
+    {
+        if(!Cache::exists(self::$sql))
+        {
+                $data = $this->pdo->prepare(self::$sql);
+                $data->execute(self::$params);
+                $res = $data->fetchAll();
+                Cache::set(self::$sql, $res);
+                return $res;
+
+        } else
+        {
+            return Cache::get(self::$sql);
+        }
     }
 
 }

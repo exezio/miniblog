@@ -16,12 +16,21 @@ class UserController extends Controller
     {
         $dataAuth = $_POST;
         $user = new User();
-        $user->load($dataAuth);
-        if(!$user->validate($user->attributesAuth))
+        $user->loadAttributesSignup($dataAuth);
+        if(!$user->validateSignup($user->attributesSignup))
         {
-            $user->getErrors();
+            $user->getErrorsSignup();
             redirect();
         }
+        if($user->saveAttributesSignup())
+        {
+            $_SESSION['success'] = 'Вы успешно зарегестрированны';
+        }
+        else
+        {
+            $_SESSION['error'] = 'Ошибка регистрации';
+        }
+        redirect();
         die;
     }
     }

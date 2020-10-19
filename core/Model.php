@@ -5,16 +5,17 @@ namespace Core;
 
 use Core\Libs\DataBase;
 use Dotenv\Validator;
+use Core\Libs\Registr;
 
 
 abstract class Model
 {
 
     protected $pdo;
-    protected $table;
-    public $attributesAuth = [];
-    public $errorsAuth = [];
-    public $rulesAuth = [];
+    public $table;
+    public $attributesSignup = [];
+    public $errorsSignup = [];
+    public $rulesSignup = [];
 
 
     public function __construct()
@@ -22,26 +23,35 @@ abstract class Model
         $this->pdo = DataBase::instance();
     }
 
-    public function load($data)
+    public function loadAttributesSignup($data)
     {
-        foreach ($this->attributesAuth as $item => $value)
+        foreach ($this->attributesSignup as $item => $value)
         {
-            if(isset($data[$item])) $this->attributesAuth[$item] = $data[$item];
+            if(isset($data[$item])) $this->attributesSignup[$item] = $data[$item];
         }
     }
-    public function validate($data)
+
+
+
+    public function saveAttributesSignup()
+    {
+        return $this->pdo->createComand()->insert($this->table, $this->attributesSignup)->query();
+    }
+
+    public function validateSignup($data)
     {
         $validator = new \Valitron\Validator($data);
-        $validator->rules($this->rulesAuth);
+        $validator->rules($this->rulesSignup);
         if($validator->validate()) return true;
-        $this->errorsAuth = $validator->errors();
+        $this->errorsSignup = $validator->errors();
         return false;
     }
 
-    public function getErrors()
+
+    public function getErrorsSignup()
     {
         $errors = '<ul>';
-        foreach ($this->errorsAuth as $item)
+        foreach ($this->errorsSignup as $item)
         {
             foreach ($item as $error) {
             $errors .= "<li>$error</li>";

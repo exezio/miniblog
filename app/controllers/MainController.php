@@ -16,12 +16,12 @@ class MainController extends Controller
         $name = 'din';
         $age = 25;
         $model = new Main();
-        $countPosts = $model->createComand()->count('posts');
+//        $countPosts = $model->createComand()->count('posts');
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $postsPerPage = 2;
-        $paginator = new Paginator($page, $postsPerPage, $countPosts);
-        $paginate = $paginator->getStart();
-        $posts = $model->createComand()->select()->from('posts')->limit($paginate, $postsPerPage)->execute();
+//        $paginator = new Paginator($page, $postsPerPage, $countPosts);
+//        $paginate = $paginator->getStart();
+//        $posts = $model->createComand()->select()->from('posts')->limit($paginate, $postsPerPage)->execute();
         $this->setProps(compact('name', 'age', 'posts', 'countPosts'));
     }
 

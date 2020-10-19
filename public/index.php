@@ -14,6 +14,8 @@ define('PUBLIC', ROOT . '/public');
 define('CORE', ROOT . '/core');
 define('LAYOUT', 'default');
 
+session_start();
+
 $whoops = new Run;
 $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
 $whoops->register();
@@ -21,6 +23,7 @@ $whoops->register();
 $dotenv = Dotenv\Dotenv::createImmutable(ROOT);
 $dotenv->load();
 
+new \Core\Libs\Cache();
 
 $url = $_SERVER['REQUEST_URI'];
 
