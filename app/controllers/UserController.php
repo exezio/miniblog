@@ -22,6 +22,7 @@ class UserController extends Controller
             $user->getErrorsSignup();
             redirect();
         }
+        $user->attributesSignup['password'] = password_hash($user->attributesSignup['password'], PASSWORD_DEFAULT);
         if($user->saveAttributesSignup())
         {
             $_SESSION['success'] = 'Вы успешно зарегестрированны';
