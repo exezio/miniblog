@@ -4,9 +4,9 @@ require_once '../vendor/autoload.php';
 
 use Core\Router;
 use Whoops\Run;
-use Vendor\Libs\Registry;
-use Vendor\Libs\Registr;
-use Vendor\Libs\Cache;
+use Core\Libs\Registry;
+use Core\Libs\Registr;
+use Core\Libs\Cache;
 
 define('ROOT', dirname(__DIR__));
 define('APP', ROOT . '/app');
@@ -23,7 +23,16 @@ $whoops->register();
 $dotenv = Dotenv\Dotenv::createImmutable(ROOT);
 $dotenv->load();
 
-new \Core\Libs\Cache();
+// memcache есть уже есть значение, set возвращает 1
+// memcache get не существ. возвращает false
+// memcache set возвращает true
+
+//redis set если уже есть значение, возвр. true, но и перезаписывает
+//redis get несущ. возвр false
+
+Cache::setDriver(new Redis());
+Cache::set('lel', 'dsa');
+
 
 $url = $_SERVER['REQUEST_URI'];
 

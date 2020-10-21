@@ -3,50 +3,36 @@
 
 namespace Core\Libs;
 
-use Libs\SingletonTrait;
-
 
 class Cache
 {
-    use SingletonTrait;
-    private static $redis;
 
-    public function __construct()
+    protected static $cache;
+
+    public static function setDriver($obj)
     {
-        try
-        {
-            self::$redis = new \Redis();
-            self::$redis->connect($_ENV['REDIS_HOST'], $_ENV['REDIS_PORT']);
-
+        $port = '';
+        switch (get_class($obj)) {
+            case 'Redis' :
+                $port = $_ENV['REDIS_PORT'];
+                break;
+            case 'Memcache' :
+                $port = $_ENV['MEMCACHE_PORT'];
+                break;
         }
-        catch (\Exception $error)
-        {
-        $error->getMessage();
-        }
+        self::$cache = new $obj();
+        self::$cache->connect($_ENV['CACHE_HOST'], $port);
     }
 
     public static function set($key, $value)
     {
-        if(!self::$redis->exists($key))
-        {
-            self::$redis->set($key, $value);
-        }
-        else trigger_error("This key is exists", E_USER_WARNING);
-
+        self::$cache->set(base64_encode($key), json_encode($value));
     }
 
     public static function get($key)
     {
-        if(!self::$redis->exists($key)) trigger_error("This key not exists", E_USER_WARNING);
-        return self::$redis->get($key);
+        return json_decode(self::$cache->get(base64_encode($key)), true);
     }
-
-    public static function exists($key)
-    {
-        return self::$redis->exists($key);
-    }
-
-
 
 
 }

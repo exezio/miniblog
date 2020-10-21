@@ -2,16 +2,15 @@
 
 
 namespace Core\Libs;
+
 use Core\Libs\Cache;
 
 class QueryBuilder
 {
 
-    private  $pdo;
+    private $pdo;
     private static $sql;
     private static $params = [];
-
-
 
 
     public function __construct($pdo)
@@ -22,21 +21,16 @@ class QueryBuilder
     protected function funcParamsToString($args)
     {
         $params = '';
-        if ($args)
-        {
-            foreach ($args as $key => $item)
-            {
+        if ($args) {
+            foreach ($args as $key => $item) {
 
-                if (is_array($item))
-                {
+                if (is_array($item)) {
                     $params = implode(', ', $item);
-                } elseif (is_string($item))
-                {
-                    $params .=  $item . (next($args)? ', ' : ' ');
+                } elseif (is_string($item)) {
+                    $params .= $item . (next($args) ? ', ' : ' ');
                 }
             }
-        } else
-        {
+        } else {
             $params = '*';
         }
         return $params;
@@ -66,10 +60,9 @@ class QueryBuilder
     {
         $insertKeys = '';
         $insertAggregate = '';
-        foreach ($values as $key => $value)
-        {
+        foreach ($values as $key => $value) {
             $insertKeys .= $key . (next($values) ? ', ' : '');
-            $insertAggregate .= ':' . $key . (!(array_key_last($values) === $key) ?  ', ' : '');
+            $insertAggregate .= ':' . $key . (!(array_key_last($values) === $key) ? ', ' : '');
         }
         $sql = "INSERT INTO {$table}({$insertKeys}) VALUES ({$insertAggregate}) ";
         self::$sql = $sql;
@@ -125,18 +118,15 @@ class QueryBuilder
 
     public function execute()
     {
-        if(!Cache::exists(self::$sql))
-        {
-                $data = $this->pdo->prepare(self::$sql);
-                $data->execute(self::$params);
-                $res = $data->fetchAll();
-                Cache::set(self::$sql, $res);
-                return $res;
-
-        } else
-        {
-            return Cache::get(self::$sql);
+        $keyForCache = base64_encode(self::$sql . implode(self::$params));
+        if (Cache::get($keyForCache)) {
+            return Cache::get($keyForCache);
         }
+        $data = $this->pdo->prepare(self::$sql);
+        $data->execute(self::$params);
+        $res = $data->fetchAll();
+        Cache::set($keyForCache, $res);
+        return $res;
     }
 
 }
