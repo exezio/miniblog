@@ -21,8 +21,8 @@ class MainController extends Controller
         $postsPerPage = 2;
         $paginator = new Paginator($page, $postsPerPage, $countPosts);
         $paginate = $paginator->getStart();
-//        $posts = $model->createComand()->select()->from('posts')->limit($paginate, $postsPerPage)->execute();
-        $use = $model->createComand()->select()->from('users')->where(['login'=> 'exezio', 'email'=>'kek'])->execute();
+        $posts = $model->createComand()->select()->from('posts')->limit($paginate, $postsPerPage)->execute();
+        $use = $model->createComand()->select()->from('users')->where(['login'=> 'exezio', 'email'=>'kek'])->limit('1')->execute();
         debug($use);
         $this->setProps(compact('name', 'age', 'posts', 'countPosts'));
     }

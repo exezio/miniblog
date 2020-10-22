@@ -43,7 +43,6 @@ class QueryBuilder
         $params = $this->funcParamsToString($args);
         $sql .= $params . ' ';
         self::$sql .= $sql;
-        debug(self::$sql);
         return $this;
     }
 
@@ -78,7 +77,6 @@ class QueryBuilder
         $params = $this->funcParamsToString($args);
         $sql .= $params . ' ';
         self::$sql .= $sql;
-        debug(self::$sql);
         return $this;
     }
 
@@ -91,8 +89,7 @@ class QueryBuilder
     {
         self::$params = array_merge(self::$params, $params);
         $sql = 'WHERE ';
-        foreach ($params as $key => $value)
-        {
+        foreach ($params as $key => $value) {
             $sql .= $key . '=' . ':' . $key . (next($params) ? ' OR ' : ' ');
         }
         self::$sql .= $sql;
@@ -109,41 +106,64 @@ class QueryBuilder
         return $count;
     }
 
+    /**
+     * Формирует строку запроса LIMIT, принимает 2 параметра int or str
+     * @param $start
+     * @param string $end
+     * @return $this
+     */
     public function limit($start, $end = '')
     {
-        if($end)
-        {
+        if ($end) {
             $sql = 'LIMIT :start, :end ';
-            $params = ['start'=>$start, 'end'=>$end];
-        } else
-        {
+            $params = ['start' => $start, 'end' => $end];
+        } else {
             $sql = 'LIMIT :start ';
-            $params = ['start'=>$start];
+            $params = ['start' => $start];
         }
         self::$sql .= $sql;
         self::$params = array_merge(self::$params, ($params));
         return $this;
     }
 
+    /**
+     * Используется для добавления записей в БД
+     * @return mixed
+     */
     public function query()
     {
         $data = $this->pdo->prepare(self::$sql);
         return $data->execute(self::$params);
     }
 
+    /**
+     * Возвращает ассоциативный массив- результат запроса к БД
+     * @return mixed
+     */
     public function execute()
     {
         debug(self::$params);
         debug(self::$sql);
         $keyForCache = base64_encode(self::$sql . implode(self::$params));
         if (Cache::get($keyForCache)) {
+            $this->clear();
             return Cache::get($keyForCache);
         }
         $data = $this->pdo->prepare(self::$sql);
         $data->execute(self::$params);
         $res = $data->fetchAll();
         Cache::set($keyForCache, $res);
+        $this->clear();
         return $res;
+    }
+
+    /**
+     * Функция очистки конструктора запросов от предыдущих запросов
+     */
+    private function clear()
+    {
+        self::$sql = '';
+        self::$params = [];
     }
 
 }
