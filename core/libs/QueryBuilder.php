@@ -43,6 +43,7 @@ class QueryBuilder
         $params = $this->funcParamsToString($args);
         $sql .= $params . ' ';
         self::$sql .= $sql;
+        debug(self::$sql);
         return $this;
     }
 
@@ -77,16 +78,23 @@ class QueryBuilder
         $params = $this->funcParamsToString($args);
         $sql .= $params . ' ';
         self::$sql .= $sql;
+        debug(self::$sql);
         return $this;
     }
 
-    public function where($sql, $params = [])
+    /**
+     * Формирует строку запроса WHERE, принимает массив вида ['login' => $login, 'password'=>'password']
+     * @param array $params
+     * @return $this
+     */
+    public function where($params = [])
     {
-        self::$params = $params;
-        $args = func_get_args();
+        self::$params = array_merge(self::$params, $params);
         $sql = 'WHERE ';
-        $params = $this->funcParamsToString($args);
-        $sql .= $params . ' ';
+        foreach ($params as $key => $value)
+        {
+            $sql .= $key . '=' . ':' . $key . (next($params) ? ' OR ' : ' ');
+        }
         self::$sql .= $sql;
         return $this;
     }
@@ -101,12 +109,19 @@ class QueryBuilder
         return $count;
     }
 
-    public function limit($start, $end)
+    public function limit($start, $end = '')
     {
-        $sql = 'LIMIT :start, :end ';
+        if($end)
+        {
+            $sql = 'LIMIT :start, :end ';
+            $params = ['start'=>$start, 'end'=>$end];
+        } else
+        {
+            $sql = 'LIMIT :start ';
+            $params = ['start'=>$start];
+        }
         self::$sql .= $sql;
-        $params = ['start' => $start, 'end' => $end];
-        self::$params = $params;
+        self::$params = array_merge(self::$params, ($params));
         return $this;
     }
 
@@ -118,6 +133,8 @@ class QueryBuilder
 
     public function execute()
     {
+        debug(self::$params);
+        debug(self::$sql);
         $keyForCache = base64_encode(self::$sql . implode(self::$params));
         if (Cache::get($keyForCache)) {
             return Cache::get($keyForCache);
