@@ -10,7 +10,6 @@ class MainController extends Controller
 {
 
 
-
     public function indexAction()
     {
         $name = 'din';
@@ -22,8 +21,6 @@ class MainController extends Controller
         $paginator = new Paginator($page, $postsPerPage, $countPosts);
         $paginate = $paginator->getStart();
         $posts = $model->createComand()->select()->from('posts')->limit($paginate, $postsPerPage)->execute();
-        $use = $model->createComand()->select()->from('users')->where(['login'=> 'exezio', 'email'=>'kek'])->limit('1')->execute();
-        debug($use);
         $this->setProps(compact('name', 'age', 'posts', 'countPosts'));
     }
 

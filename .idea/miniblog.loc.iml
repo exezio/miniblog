@@ -10,6 +10,13 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/app/models" isTestSource="false" packagePrefix="App\Models\" />
       <sourceFolder url="file://$MODULE_DIR$/libs" isTestSource="false" packagePrefix="Libs\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/core" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/lang" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/libs" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/plugins" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/samples" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/skins" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/userfiles" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell/result-type" />

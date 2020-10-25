@@ -22,4 +22,11 @@ if(!function_exists('debug')) {
         exit;
     }
 
+if(!function_exists('htmlStr')) {
+    function htmlStr($str)
+    {
+        return htmlspecialchars($str, ENT_QUOTES);
+
+    }
+}
 

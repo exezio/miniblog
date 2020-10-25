@@ -142,8 +142,6 @@ class QueryBuilder
      */
     public function execute()
     {
-        debug(self::$params);
-        debug(self::$sql);
         $keyForCache = base64_encode(self::$sql . implode(self::$params));
         if (Cache::get($keyForCache)) {
             $this->clear();
@@ -153,6 +151,15 @@ class QueryBuilder
         $data->execute(self::$params);
         $res = $data->fetchAll();
         Cache::set($keyForCache, $res);
+        $this->clear();
+        return $res;
+    }
+
+    public function findOne()
+    {
+        $data = $this->pdo->prepare(self::$sql);
+        $data->execute(self::$params);
+        $res = $data->fetchAll();
         $this->clear();
         return $res;
     }

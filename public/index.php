@@ -13,6 +13,7 @@ define('APP', ROOT . '/app');
 define('PUBLIC', ROOT . '/public');
 define('CORE', ROOT . '/core');
 define('LAYOUT', 'default');
+define('VIEWS', APP . '/views');
 
 session_start();
 

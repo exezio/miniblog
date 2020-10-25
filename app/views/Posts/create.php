@@ -1,37 +1,37 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                           placeholder="name@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-            </form>
+
+
+
+<div class="container-fluid pb-4 pt-4 paddding">
+    <div class="container paddding">
+        <div class="row mx-0">
+            <div class="col-md-8 animate-box m-auto" data-animate-effect="fadeInLeft">
+
+                <h1>Создать пост</h1>
+                <form enctype="multipart/form-data" method="post" action="/posts/create">
+                    <div class="form-group">
+                        <label for="login">Логин</label>
+                        <input type="login" name="login" class="form-control" id="login" placeholder="Логин">
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <textarea name="editor1"></textarea>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </form>
+                <script>
+                    CKEDITOR.replace( 'editor1', {
+                        filebrowserBrowseUrl: '/vendor/ckfinder/ckfinder.html',
+                        filebrowserUploadUrl: '/vendor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+                    } );
+                </script>
+            </div>
         </div>
-    </div>
-</div>
+
+
+

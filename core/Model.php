@@ -40,6 +40,7 @@ abstract class Model
 
     public function validateSignup($data)
     {
+        \Valitron\Validator::lang('ru');
         $validator = new \Valitron\Validator($data);
         $validator->rules($this->rulesSignup);
         if($validator->validate()) return true;

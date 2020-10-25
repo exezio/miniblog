@@ -18,7 +18,6 @@ class View
         $this->route = $route;
         $this->layout = $layout;
         $this->view = $route['action'];
-
     }
 
     public static function setMetaData($title = '', $description = '', $keywords = '')
@@ -32,6 +31,12 @@ class View
     echo '<title>' . self::$meta['title'] . '</title>
         <meta name="description" content="' . self::$meta['desc'] . '">
         <meta name="keywords" content="' . self::$meta['keywords'] . '">';
+    }
+
+    public static function getComponent($file)
+    {
+        $file = VIEWS . "/components/{$file}.php";
+        if(is_file($file)) require_once $file;
     }
 
     public function render($props)
