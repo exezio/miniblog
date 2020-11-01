@@ -13,6 +13,14 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/vlucas/valitron" />
       <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/userfiles" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/skins" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/samples" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/plugins" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/libs" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/lang" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/core" />
+      <path value="$PROJECT_DIR$/vendor/cbschuld/browser.php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

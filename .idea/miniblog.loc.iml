@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/app/models" isTestSource="false" packagePrefix="App\Models\" />
       <sourceFolder url="file://$MODULE_DIR$/libs" isTestSource="false" packagePrefix="Libs\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cbschuld/browser.php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/core" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/lang" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ckfinder/libs" />

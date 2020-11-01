@@ -9,6 +9,11 @@ class Main extends Model
 
     public $table = 'posts';
 
+    public function checkAuthorize()
+    {
+
+    }
+
 
 
 }

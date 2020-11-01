@@ -12,10 +12,9 @@ abstract class Model
 {
 
     protected $pdo;
-    public $table;
-    public $attributesSignup = [];
-    public $errorsSignup = [];
-    public $rulesSignup = [];
+    protected $table;
+    protected $attributesSignup;
+
 
 
     public function __construct()
@@ -23,54 +22,12 @@ abstract class Model
         $this->pdo = DataBase::instance();
     }
 
-    public function loadAttributesSignup($data)
+    public function loadAttributes($data)
     {
         foreach ($this->attributesSignup as $item => $value)
         {
             if(isset($data[$item])) $this->attributesSignup[$item] = $data[$item];
         }
-    }
-
-
-
-    public function saveAttributesSignup()
-    {
-        return $this->pdo->createComand()->insert($this->table, $this->attributesSignup)->query();
-    }
-
-    public function validateSignup($data)
-    {
-        \Valitron\Validator::lang('ru');
-        $validator = new \Valitron\Validator($data);
-        $validator->rules($this->rulesSignup);
-        if($validator->validate()) return true;
-        $this->errorsSignup = $validator->errors();
-        return false;
-    }
-
-
-    public function getErrorsSignup()
-    {
-        $errors = '<ul>';
-        foreach ($this->errorsSignup as $item)
-        {
-            foreach ($item as $error) {
-            $errors .= "<li>$error</li>";
-         }
-        }
-        $errors .= "</ul>";
-        return $_SESSION['errorsAuth'] = $errors;
-    }
-
-
-    public function query($sql, $params = [])
-    {
-        return $this->pdo->getQuery($sql, $params);
-    }
-
-    public function queryAll($sql, $params = [])
-    {
-        return $this->pdo->getQueryAll($sql, $params);
     }
 
     public function createComand()

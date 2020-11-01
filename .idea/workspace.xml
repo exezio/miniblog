@@ -19,21 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="822ad137-c86f-43a4-b8d0-ca641cc879c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.php" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="b377ae4d-ad12-4283-83c9-f4977a476023" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/User/lc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/miniblog.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/miniblog.loc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/admin/TestController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Posts/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Posts/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/User/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/User/signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layout/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layout/default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/libs/Cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/libs/Cache.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/libs/QueryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/libs/QueryBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,9 +41,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,9 +68,18 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/vlucas/valitron" />
       <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/userfiles" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/skins" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/samples" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/plugins" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/libs" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/lang" />
+      <path value="$PROJECT_DIR$/vendor/ckfinder/core" />
+      <path value="$PROJECT_DIR$/vendor/cbschuld/browser.php" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1j5KrUnvm5atByC3PFMS4ZMZ4Lv" />
+  <component name="ProjectId" id="1j6kYzDAcf0MPTroIkUiafAECy7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -72,20 +88,76 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\miniblog.loc\public" />
+      <recent name="C:\OpenServer\domains\miniblog.loc\public\js" />
+      <recent name="C:\OpenServer\domains\miniblog.loc\public\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="822ad137-c86f-43a4-b8d0-ca641cc879c1" name="Default Changelist" comment="" />
-      <created>1603088714961</created>
+      <changelist id="b377ae4d-ad12-4283-83c9-f4977a476023" name="Default Changelist" comment="" />
+      <created>1603131979743</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603088714961</updated>
-      <workItem from="1603088718568" duration="89000" />
-      <workItem from="1603088834224" duration="20598000" />
+      <updated>1603131979743</updated>
+      <workItem from="1603131980969" duration="65000" />
+      <workItem from="1603132050072" duration="34570000" />
+      <workItem from="1603387791619" duration="67359000" />
+      <workItem from="1604137676450" duration="11000" />
+      <workItem from="1604137745189" duration="10000" />
+      <workItem from="1604137797686" duration="4000" />
+      <workItem from="1604138505067" duration="30000" />
+      <workItem from="1604138558494" duration="551000" />
+      <workItem from="1604139174500" duration="5000" />
+      <workItem from="1604139203037" duration="105000" />
+      <workItem from="1604139527955" duration="495000" />
+      <workItem from="1604140409344" duration="77000" />
+      <workItem from="1604140668214" duration="1000" />
+      <workItem from="1604140844825" duration="314000" />
+      <workItem from="1604141489960" duration="6000" />
+      <workItem from="1604141523406" duration="18000" />
+      <workItem from="1604141564127" duration="170000" />
+      <workItem from="1604141759508" duration="21000" />
+      <workItem from="1604141838410" duration="184000" />
+      <workItem from="1604147635263" duration="3899000" />
+      <workItem from="1604174156122" duration="12587000" />
     </task>
+    <task id="LOCAL-00001" summary="Переделан Cache, добавлена возможность использования Memcache и Redis через метод setDriver. Добавлено Кэширование результатов запросов БД с кодировкой ключей в методе execute класса QueryBuilder">
+      <created>1603311701932</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603311701932</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Доработаны методы count и where конструктора запросов">
+      <created>1603366233203</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603366233203</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Добавлен метод clear и доработан метод LIMIT конструктора запросов">
+      <created>1603367049874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603367049874</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Последние правки">
+      <created>1603652342466</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603652342467</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,14 +175,37 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Переделан Cache, добавлена возможность использования Memcache и Redis через метод setDriver. Добавлено Кэширование результатов запросов БД с кодировкой ключей в методе execute класса QueryBuilder" />
+    <MESSAGE value="Доработаны методы count и where конструктора запросов" />
+    <MESSAGE value="Добавлен метод clear и доработан метод LIMIT конструктора запросов" />
+    <MESSAGE value="Последние правки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Последние правки" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1603088815444">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1604141157534">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603088815444" />
-    <state x="461" y="151" key="SettingsEditor" timestamp="1603111517796">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604141157534" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1604178531656">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603111517796" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1604178531656" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1604141160946">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604141160946" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1603652374355">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603652374355" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1603309558502">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1603309558502" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603532514180">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603532514180" />
   </component>
 </project>

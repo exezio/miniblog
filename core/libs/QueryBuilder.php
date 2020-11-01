@@ -159,7 +159,7 @@ class QueryBuilder
     {
         $data = $this->pdo->prepare(self::$sql);
         $data->execute(self::$params);
-        $res = $data->fetchAll();
+        $res = $data->fetch();
         $this->clear();
         return $res;
     }
