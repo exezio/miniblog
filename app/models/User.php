@@ -4,7 +4,10 @@
 namespace App\Models;
 
 
+use Browser;
+use Core\Libs\Cache;
 use Core\Model;
+use Valitron\Validator;
 
 
 class User extends Model
@@ -47,8 +50,8 @@ class User extends Model
 
     public function validateSignup()
     {
-        \Valitron\Validator::lang('ru');
-        $validator = new \Valitron\Validator($this->attributesSignup);
+        Validator::lang('ru');
+        $validator = new Validator($this->attributesSignup);
         $validator->rules($this->rulesSignup);
         if ($validator->validate()) return true;
         $errors = call_user_func_array('array_merge', $validator->errors());
@@ -68,6 +71,11 @@ class User extends Model
         }
     }
 
+    public function getErrorsSignup()
+    {
+        $_SESSION['errorsAuth'] = $this->errorsSignup;
+    }
+
     public function saveUser()
     {
         $this->attributesSignup['password'] = password_hash($this->attributesSignup['password'], PASSWORD_DEFAULT);
@@ -80,13 +88,6 @@ class User extends Model
         }
     }
 
-
-    public function getErrorsSignup()
-    {
-        $_SESSION['errorsAuth'] = $this->errorsSignup;
-    }
-
-
     public function login($login, $password)
     {
 
@@ -95,21 +96,19 @@ class User extends Model
 
             if ($user) {
                 if (password_verify($password, $user['password'])) {
-                    $browser = new \Browser();
+                    $browser = new Browser();
                     $token = bin2hex(random_bytes(16));
-                    setcookie('user_token', $token, time() +3600);
-                    $ip = $_SERVER['REMOTE_ADDR'];
-                    $agent = $browser->getBrowser();
-                    $platform = $browser->getPlatform();
-                    $role = $user['role'];
-                    $query = $this->createComand()->insert('users_session', [
-                        'id'=>$user['id'],
-                        'token'=>$token,
-                        'ip'=>$ip,
-                        'agent'=>$agent,
-                        'platform'=>$platform,
-                        'role'=>$role
-                    ])->query();
+                    setcookie('user_token', $token, time() + 3600 * 24 * 365);
+                    $userSession = [
+                        'id' => $user['id'],
+                        'token' => $token,
+                        'ip' => $_SERVER['REMOTE_ADDR'],
+                        'agent' => $browser->getUserAgent(),
+                        'platform' => $browser->getPlatform(),
+                        'role' => $user['role']
+                    ];
+                    Cache::set($token, $userSession);
+                    $query = $this->createComand()->insert('users_session', $userSession)->query();
                     return true;
                 }
             }
