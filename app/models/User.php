@@ -98,7 +98,6 @@ class User extends Model
                 if (password_verify($password, $user['password'])) {
                     $browser = new Browser();
                     $token = bin2hex(random_bytes(16));
-                    setcookie('user_token', $token, time() + 3600 * 24 * 365);
                     $userSession = [
                         'id' => $user['id'],
                         'token' => $token,
@@ -107,6 +106,7 @@ class User extends Model
                         'platform' => $browser->getPlatform(),
                         'role' => $user['role']
                     ];
+                    setcookie('user_token', $token, time() + 3600 * 24 * 365);
                     Cache::set($token, $userSession);
                     $query = $this->createComand()->insert('users_session', $userSession)->query();
                     return true;
