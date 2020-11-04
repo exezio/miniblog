@@ -31,7 +31,7 @@ $dotenv->load();
 //redis get несущ. возвр false
 
 Cache::setDriver(new Redis());
-Cache::set('lel', 'dsa');
+
 
 
 $url = $_SERVER['REQUEST_URI'];
