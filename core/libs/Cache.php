@@ -8,6 +8,7 @@ class Cache
 {
 
     protected static $cache;
+    protected static $lifetime = 60 * 60 * 24;
 
     public static function setDriver($obj)
     {
@@ -26,7 +27,7 @@ class Cache
 
     public static function set($key, $value)
     {
-        self::$cache->set(base64_encode($key), json_encode($value));
+        self::$cache->set(base64_encode($key), json_encode($value), self::$lifetime);
     }
 
     public static function get($key)

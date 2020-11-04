@@ -28,5 +28,14 @@ if(!function_exists('htmlStr')) {
         return htmlspecialchars($str, ENT_QUOTES);
 
     }
+
+    if(!function_exists('checkAuthorize'))
+    {
+        function checkAuthorize()
+        {
+         $token = ($_SESSION['user_token']) ? : $_COOKIE['user_token'];
+         var_dump(\Core\Libs\Cache::get($token));
+        }
+    }
 }
 

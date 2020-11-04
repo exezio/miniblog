@@ -20,20 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b377ae4d-ad12-4283-83c9-f4977a476023" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/User/lc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/miniblog.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/miniblog.loc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/User/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/User/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/User/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/User/signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layout/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layout/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/libs/Cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/libs/Cache.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/libs/QueryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/libs/QueryBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +85,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -127,7 +122,11 @@
       <workItem from="1604141759508" duration="21000" />
       <workItem from="1604141838410" duration="184000" />
       <workItem from="1604147635263" duration="3899000" />
-      <workItem from="1604174156122" duration="12587000" />
+      <workItem from="1604174156122" duration="13584000" />
+      <workItem from="1604426057371" duration="248000" />
+      <workItem from="1604426588666" duration="103000" />
+      <workItem from="1604429448744" duration="4477000" />
+      <workItem from="1604498215531" duration="17845000" />
     </task>
     <task id="LOCAL-00001" summary="Переделан Cache, добавлена возможность использования Memcache и Redis через метод setDriver. Добавлено Кэширование результатов запросов БД с кодировкой ключей в методе execute класса QueryBuilder">
       <created>1603311701932</created>
@@ -157,7 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603652342467</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Переделана регистрация и авторизация, подкорректирован метод findOne QueryBuilder.php, в БД создана таблица users_session">
+      <created>1604253632762</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604253632762</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Переделана регистрация и авторизация, подкорректирован метод findOne QueryBuilder.php, в БД создана таблица users_session">
+      <created>1604253854870</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604253854870</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +193,8 @@
     <MESSAGE value="Доработаны методы count и where конструктора запросов" />
     <MESSAGE value="Добавлен метод clear и доработан метод LIMIT конструктора запросов" />
     <MESSAGE value="Последние правки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Последние правки" />
+    <MESSAGE value="Переделана регистрация и авторизация, подкорректирован метод findOne QueryBuilder.php, в БД создана таблица users_session" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделана регистрация и авторизация, подкорректирован метод findOne QueryBuilder.php, в БД создана таблица users_session" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1604141157534">
@@ -191,18 +205,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1604178531656" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1604141160946">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1604490170962">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604141160946" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1603652374355">
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604490170962" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1604253856948">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603652374355" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1603309558502">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604253856948" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1604514384320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1603309558502" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604514384320" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603532514180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

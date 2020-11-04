@@ -44,9 +44,9 @@
                         Вы успешно зарегестрированы
                     </div>
                 <? endif; ?>
-                <? if ($_SESSION['errorsAuth']): ?>
+                <? if ($_SESSION['errors']): ?>
                     <div class="alert alert-danger mt-4" role="alert">
-                        <?= debug($_SESSION['errorsAuth']) ?>
+                        <?= $_SESSION['errors'] ?>
                     </div>
                 <? endif; ?>
             </div>

@@ -133,7 +133,9 @@ class QueryBuilder
     public function query()
     {
         $data = $this->pdo->prepare(self::$sql);
-        return $data->execute(self::$params);
+        $data->execute(self::$params);
+        $this->clear();
+        return $data;
     }
 
     /**

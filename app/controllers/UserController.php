@@ -27,8 +27,9 @@ class UserController extends Controller
         {
             $login = $_POST['login'];
             $password = $_POST['password'];
+            $remember = $_POST['remember'];
             $user = new User();
-            $user->login($login, $password);
+            $user->login($login, $password, $remember);
         }
     }
 
