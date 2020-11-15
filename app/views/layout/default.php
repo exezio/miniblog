@@ -37,7 +37,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/user/login"> </a>
+                        <a class="nav-link" href="/user/login">Contact <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>

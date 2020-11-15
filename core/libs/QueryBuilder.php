@@ -70,6 +70,12 @@ class QueryBuilder
         return $this;
     }
 
+    public function delete()
+    {
+        self::$sql .= 'DELETE ';
+        return $this;
+    }
+
     public function from()
     {
         $args = func_get_args();

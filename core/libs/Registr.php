@@ -7,7 +7,7 @@ namespace Core\Libs;
 class Registr
 {
 
-    protected static $container = [];
+    public static $container = [];
 
     public static function set($key, $value)
     {

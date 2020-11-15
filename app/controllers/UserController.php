@@ -6,9 +6,11 @@ namespace App\Controllers;
 
 use App\Models\User;
 use Core\Controller;
+use function GuzzleHttp\Promise\exception_for;
 
 class UserController extends Controller
 {
+    private $token = '';
 
     public function signupAction()
     {
@@ -30,7 +32,16 @@ class UserController extends Controller
             $remember = $_POST['remember'];
             $user = new User();
             $user->login($login, $password, $remember);
+
         }
+    }
+
+    public function checkAction()
+    {
+        $user = new User();
+        $user->logout();
+//        header("Location: /");
+//        exit();
     }
 
     public function logoutAction()

@@ -16,6 +16,8 @@ define('VIEWS', APP . '/views');
 
 session_start();
 
+Registr::class;
+
 $whoops = new Run;
 $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
 $whoops->register();
