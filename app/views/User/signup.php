@@ -56,5 +56,7 @@
 </div>
 
 <? if (isset($_SESSION['form_data'])) unset($_SESSION['form_data']) ?>
+<? if (isset($_SESSION['errors'])) unset($_SESSION['errors']) ?>
 <? if (isset($_SESSION['success'])) unset($_SESSION['success']) ?>
-<? if (isset($_SESSION['errorsAuth'])) unset($_SESSION['errorsAuth']) ?>
+
+

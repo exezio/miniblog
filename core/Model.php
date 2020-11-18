@@ -28,6 +28,7 @@ abstract class Model
         {
             if(isset($data[$item])) $this->attributesSignup[$item] = $data[$item];
         }
+
     }
 
     public function createComand()

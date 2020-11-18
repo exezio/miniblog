@@ -4,6 +4,8 @@
 namespace App\Controllers;
 
 
+use App\Models\Auth;
+use App\Models\Registration;
 use App\Models\User;
 use Core\Controller;
 use function GuzzleHttp\Promise\exception_for;
@@ -17,9 +19,15 @@ class UserController extends Controller
         if (!empty($_POST))
         {
             $dataAuth = $_POST;
-            $user = new User();
-            $user->loadAttributes($dataAuth);
-            $user->userRegistration();
+            $registration = new Registration();
+            $registration->loadAttributes($dataAuth);
+            if($registration->userRegistration())
+            {
+                header('Refresh: 2; url=/user/login');
+            }else{
+                header('Location: /user/signup');
+                exit();
+            }
         }
     }
 
@@ -30,8 +38,8 @@ class UserController extends Controller
             $login = $_POST['login'];
             $password = $_POST['password'];
             $remember = $_POST['remember'];
-            $user = new User();
-            $user->login($login, $password, $remember);
+            $authorization = new Auth();
+            $authorization->login($login, $password, $remember);
 
         }
     }
